@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./cinemabackend
+      dockerfile: Dockerfile
+    container_name: cinema-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - cinema-network
+
+  frontend:
+    build:
+      context: ./cinema_frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:8080
+    container_name: cinema-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - cinema-network
+
+networks:
+  cinema-network:
+    driver: bridge
+
