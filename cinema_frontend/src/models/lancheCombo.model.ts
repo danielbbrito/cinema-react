@@ -1,7 +1,7 @@
 import z from "zod";
 
 export interface ILancheCombo {
-    id: string | Number;
+    id: string | number;
     nome: string;
     descricao: string;
     valorUnitario: number;

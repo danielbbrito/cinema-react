@@ -4,8 +4,6 @@ import { sessoesService } from "../../services/sessao.service";
 import { filmesService } from "../../services/filme.service";
 import { salasService } from "../../services/sala.service";
 import { type ISessao } from "../../models/sessao.model";
-import { type IFilme } from "../../models/filme.model";
-import { type ISala } from "../../models/sala.model";
 import { ConfirmModal } from "../../components/ConfirmModal";
 import { VendaIngressoModal } from "../../components/VendaIngressoModal";
 
@@ -77,7 +75,8 @@ export const SessoesPages = () => {
             setSessaoToDelete(null);
             loadSessoes();
         } catch (err) {
-            alert("Erro ao excluir sessão");
+            const errorMessage = err instanceof Error ? err.message : "Erro ao excluir sessão";
+            alert(errorMessage);
             console.error(err);
             setShowDeleteModal(false);
             setSessaoToDelete(null);

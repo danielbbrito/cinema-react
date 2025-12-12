@@ -1,10 +1,11 @@
 import { type ISala } from "../models/sala.model"
+import { API_BASE_URL } from "../config/api.config"
 
-const API_BASE_URL = "http://localhost:3000/salas";
+const API_ENDPOINT = `${API_BASE_URL}/salas`;
 
 export class SalasService {
     private async request<T>(endpoint: string, options: RequestInit = {}) {
-        const URL = API_BASE_URL + endpoint;
+        const URL = API_ENDPOINT + endpoint;
 
         const defaultHeaders = {
             "Content-Type": "application/json"

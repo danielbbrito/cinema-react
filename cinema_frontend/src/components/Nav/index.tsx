@@ -63,6 +63,26 @@ export const Nav = () => {
                                 Sessões
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link 
+                                className={`nav-link ${location.pathname.startsWith("/lancheCombos") ? "active" : ""}`} 
+                                aria-current={location.pathname.startsWith("/lancheCombos") ? "page" : undefined} 
+                                to="/lancheCombos"
+                            >
+                                <i className="bi bi-cup-hot me-1"></i>
+                                Lanche Combos
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link 
+                                className={`nav-link ${location.pathname.startsWith("/pedidos") ? "active" : ""}`} 
+                                aria-current={location.pathname.startsWith("/pedidos") ? "page" : undefined} 
+                                to="/pedidos"
+                            >
+                                <i className="bi bi-receipt me-1"></i>
+                                Pedidos
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

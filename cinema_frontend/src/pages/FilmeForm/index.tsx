@@ -191,13 +191,13 @@ export const FilmeFormPages = () => {
                             Classificação <span className="text-danger">*</span>
                         </label>
                         <input
-                            type="text"
+                            type="number"
                             className="form-control"
                             id="classificacao"
                             name="classificacao"
                             value={formData.classificacao}
                             onChange={handleChange}
-                            placeholder="Ex: 16"
+                            placeholder="16"
                             required
                         />
                     </div>
